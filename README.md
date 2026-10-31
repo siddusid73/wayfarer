@@ -1,204 +1,176 @@
-<p align="center">
-  <img src="docs/images/wayfarer-logo.png" alt="Wayfarer logo" width="64" height="64" />
+import pypandoc
+
+readme = r'''<p align="center">
+  <img src="docs/images/wayfarer-logo.png" alt="Wayfarer logo" width="72" />
 </p>
 
 <h1 align="center">Wayfarer</h1>
-<p align="center"><strong>India-first road trip planner</strong><br />Find places. Plan stops. Take the long way round.</p>
+
+<p align="center">
+  <strong>An India-first road trip planner</strong><br />
+  Find places. Plan stops. Take the long way round.
+</p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/React-19-149ECA?logo=react&logoColor=white" alt="React 19" />
   <img src="https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white" alt="TypeScript" />
   <img src="https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?logo=tailwindcss&logoColor=white" alt="Tailwind CSS 4" />
-  <img src="https://img.shields.io/badge/Map_data-OpenStreetMap-7EBC6F?logo=openstreetmap&logoColor=white" alt="OpenStreetMap data" />
-  <img src="https://img.shields.io/badge/API_keys-Not_required-BF3828" alt="No API keys required" />
+  <img src="https://img.shields.io/badge/Map_data-OpenStreetMap-7EBC6F?logo=openstreetmap&logoColor=white" alt="OpenStreetMap" />
 </p>
 
-![Wayfarer homepage in the Sunset theme](docs/images/wayfarer-home.png)
+<p align="center">
+  <img src="docs/images/wayfarer-home.png" alt="Wayfarer homepage in the Sunset theme" width="900" />
+</p>
 
-## About the project
+## Overview
 
-Wayfarer helps users plan driving trips, primarily within India. Search for a starting place and destination, see a route on an interactive map, and add stops along the way. Explore nearby hotels, restaurants, fuel stations, and attractions around a selected stop.
+Wayfarer helps you plan driving trips, primarily in India. Search for a starting point and destination, view the route on an interactive map, and add stops along the way. You can also explore nearby stays, restaurants, fuel stations, and attractions around selected stops.
 
-It uses open map data and free public services. No sign-up, database setup, or API keys are required for the current features. An internet connection is required for maps, search, routes, and nearby places.
-
-> **Important:** Saved trips stay in the browser and device where they were created. They do not automatically appear on another laptop or phone.
+- No account or API key is required for the currently implemented public services.
+- An internet connection is required for place search, maps, routes, and nearby results.
+- Trips are saved in your browser on the device where you created them; they are not synced between devices.
 
 ## Features
 
-- **India-first search:** Place-name suggestions as you type, with state information when available.
-- **Optional international search:** Include places outside India; coverage varies.
-- **Interactive map:** OpenFreeMap background, labeled stops, and a driving route.
-- **Editable stops:** Add, reorder, and remove places.
-- **Route estimates:** Driving distance and estimated travel time—not live traffic.
-- **Nearby places:** Stays, food & cafés, viewpoints, attractions, fuel, EV charging, and rest areas within 5 km of a selected stop, where data is available.
-- **Trip details:** Optional start date and an editable, clearable days field.
-- **Browser-local saving:** Reopen and delete trips from My trips.
-- **Itinerary export:** Copy or download a plain-text `.txt` itinerary.
-- **Three themes:** Sunset by default, plus Daylight and Dusk.
-- **Phone and laptop layouts:** Use the app in a modern web browser.
+- **Place search:** Type-ahead place suggestions, with India-first search and optional international coverage.
+- **Interactive route map:** View the driving route and trip stops on a map.
+- **Flexible itinerary:** Add, reorder, and remove stops.
+- **Route estimates:** See estimated driving distance and duration; live traffic is not included.
+- **Nearby places:** Explore food, cafés, stays, attractions, viewpoints, fuel, EV charging, and rest areas near a selected stop when data is available.
+- **Trip details:** Optionally set a start date and trip duration.
+- **Saved trips:** Reopen or delete trips in the same browser.
+- **Export:** Copy or download an itinerary as a plain-text file.
+- **Themes and responsive layout:** Choose Sunset, Daylight, or Dusk on laptop or phone.
 
 ## Route-planning preview
 
-![Vijayawada to Hyderabad route, stops, and nearby-place controls](docs/images/wayfarer-trip.png)
+<p align="center">
+  <img src="docs/images/wayfarer-trip.png" alt="Example trip route, stops, and nearby-place controls" width="900" />
+</p>
 
-*Example trip shown for illustration; distances and times depend on the routing service.*
+*Example trip shown for illustration. Routes, distances, durations, and nearby results depend on the public services and available data.*
 
-## Quick start
+## Getting started
 
-### 1. Install Node.js
+### Requirements
 
-Install **Node.js 22.12 or newer in the 22.x LTS line**, or a newer supported LTS release, from [nodejs.org](https://nodejs.org/). npm is included.
+- [Node.js](https://nodejs.org/) 22.12 or a newer supported LTS release
+- npm (included with Node.js)
+- Internet connection for map and place services
 
-Check the installation in PowerShell or Terminal:
+Check your installation:
 
 ```bash
 node --version
 npm --version
 ```
 
-### 2. Download this repository
+### Install and run
 
-On GitHub, choose **Code → Download ZIP**, then extract it. Open a terminal inside the extracted app folder—the one containing `package.json`.
-
-> If the ZIP creates a folder inside another folder, enter the inner folder first. The correct folder contains `package.json`, `src`, and `vite.config.ts`.
-
-### 3. Install and start
+1. Clone the repository or download and extract the ZIP.
+2. Open a terminal in the project folder—the folder containing `package.json`.
+3. Install dependencies and start the development server:
 
 ```bash
 npm install
 npm run dev -- --open
 ```
 
-The second command starts the app and opens your browser automatically. Use the **Local** address printed in the terminal; in the supplied setup it is normally `http://localhost:8080`.
+Vite will print the local address in the terminal and attempt to open it in your browser. In this setup, the address is usually `http://localhost:8080/`.
 
-Keep the terminal running while using the app. Press **Ctrl+C** to stop it.
-
-### Start it again later
-
-You normally only need:
+Keep the terminal open while you use the app. Press `Ctrl+C` to stop the development server. To start it again later, run:
 
 ```bash
 npm run dev -- --open
 ```
 
-Run `npm install` again if dependencies change or you download a new version.
+## How to use Wayfarer
 
-## Open it on a phone
-
-For testing on your own Wi-Fi:
-
-1. Connect the laptop and phone to the same Wi-Fi network.
-2. Start the app with:
-
-   ```bash
-   npm run dev -- --host 0.0.0.0 --open
-   ```
-
-3. Open the **Network** address shown in the terminal on your phone—for example, `http://192.168.1.112:8080`.
-4. If Windows asks about network access, allow it on your trusted **private** network only.
-
-The example IP is not permanent; use your own current Network address. `localhost` on a phone refers to the phone, not your laptop. This Wi-Fi address is not a public internet link.
-
-## How to use it
-
-1. Enter a starting place and destination, choosing a suggestion for each.
-2. Add a date or number of days if needed, then create the trip.
-3. Add or reorder stops on the trip page.
-4. Select a nearby-place category and the stop to search around.
-5. Select a returned place to highlight it on the map.
-6. Use **Copy** or **Download** to share the itinerary text.
+1. Enter a starting place and destination, then choose a suggestion for each.
+2. Create the trip; add a date or duration if needed.
+3. Add, reorder, or remove stops on the trip page.
+4. Choose a nearby-place category and the stop you want to explore.
+5. Select a result to highlight it on the map.
+6. Copy or download the itinerary to share it.
 7. Open **My trips** in the same browser to return to saved trips.
 
-## Technology
+### Test on a phone over Wi-Fi
 
-| Part | Technology |
+Connect your phone and laptop to the same trusted Wi-Fi network, then run:
+
+```bash
+npm run dev -- --host 0.0.0.0 --open
+```
+
+Open the **Network** address printed by Vite on your phone. Allow access through the Windows firewall only on a trusted private network if prompted. This is for local Wi-Fi testing, not a public website link.
+
+## Tech stack
+
+| Area | Technology |
 |---|---|
-| User interface | React 19 and TypeScript |
-| Pages and application framework | TanStack Router and TanStack Start |
-| Styling | Tailwind CSS 4 and Radix-based UI controls |
+| UI | React 19, TypeScript |
+| Application framework and routing | TanStack Start, TanStack Router |
+| Styling and UI components | Tailwind CSS 4, Radix-based components |
 | Development and bundling | Vite |
-| Map rendering | Leaflet, MapLibre GL, and the MapLibre–Leaflet bridge |
-| Saved trips | Browser `localStorage` |
-| Automated tests | Vitest |
+| Mapping | Leaflet, MapLibre GL |
+| Trip storage | Browser `localStorage` |
+| Tests | Vitest |
 
 ## Map and place services
 
-| Service | What it provides |
+Wayfarer currently uses these public services:
+
+| Service | Purpose |
 |---|---|
-| [OpenFreeMap](https://openfreemap.org/) | The map background |
-| [OpenStreetMap](https://www.openstreetmap.org/copyright) | Community-maintained geographic data |
-| [Photon](https://photon.komoot.io/) | Place-name autocomplete |
+| [OpenFreeMap](https://openfreemap.org/) | Map background |
+| [OpenStreetMap](https://www.openstreetmap.org/copyright) | Community-maintained map data |
+| [Photon](https://photon.komoot.io/) | Place-name suggestions |
 | [Nominatim](https://nominatim.org/) | Backup place search and nearby-category search |
-| [OSRM](https://project-osrm.org/) | Driving routes, distance, and duration estimates |
+| [OSRM](https://project-osrm.org/) | Driving route, distance, and duration estimates |
 | [Overpass API](https://wiki.openstreetmap.org/wiki/Overpass_API) | Nearby places from OpenStreetMap data |
 
-No keys are needed for the public endpoints currently used. These are separate services: free access does **not** guarantee permanent availability or unlimited production use. Respect provider usage policies; a high-traffic deployment may need dedicated or self-hosted services.
+These public services do not require keys in the current setup, but availability, coverage, rate limits, and usage policies can change. Search terms and coordinates are sent to the relevant providers to retrieve results. A production deployment with significant traffic may need dedicated or self-hosted services.
 
-Search terms and coordinates are sent to these providers to produce results. Saved trip records remain in the browser; they are not synced to a Wayfarer account.
-
-## Project structure
-
-```text
-src/
-  assets/                 Homepage image
-  components/             Search boxes, header, and interactive map
-  lib/
-    geo.ts                Place search, routing, and nearby lookups
-    trips.ts              Trip saving and itinerary formatting
-  routes/
-    __root.tsx            Shared page shell
-    index.tsx             Trip-planning homepage
-    trips.tsx             Saved trips
-    trip.$id.tsx          Individual trip editor and map
-  styles.css              Shared styles and theme colours
-public/                   Public files
-vite.config.ts            Development and build configuration
-package.json              Dependencies and commands
-```
-
-## Commands and testing
+## Useful commands
 
 | Command | Purpose |
 |---|---|
-| `npm run dev -- --open` | Start development and open the browser |
+| `npm run dev -- --open` | Start the development server |
 | `npm run build` | Create a production build |
 | `npm run preview` | Preview the build locally |
 | `npm test` | Run automated tests |
 | `npm run lint` | Check code quality |
 
-The current targeted suite contains **6 tests across 3 files**, covering route-file setup, trip storage/reordering, and nearby-search fallback, cancellation, and malformed/out-of-radius results. It is not a complete guarantee that every feature or public provider will always work.
+## Project structure
 
-## Put the code on GitHub manually
+```text
+src/
+├── assets/       Homepage imagery
+├── components/   Search, header, map, and UI components
+├── hooks/        Reusable React hooks
+├── lib/          Place search, routing, trip storage, utilities
+└── routes/       Homepage, saved trips, and trip editor
+public/           Public assets
+docs/images/      README screenshots and logo
+package.json      Dependencies and scripts
+vite.config.ts    Vite and framework configuration
+```
 
-See [MANUAL_GITHUB_GUIDE.md](MANUAL_GITHUB_GUIDE.md) for step-by-step browser-upload instructions. No Git commands are required for that method.
+## Notes and limitations
 
-**Uploading code is not the same as publishing a working website.** People can download a GitHub repository and run it locally. To let visitors open the app without installing anything, deploy it to a compatible host and share that host's public link.
-
-### Hosting note
-
-This is a **TanStack Start application with a server build**, not simply an HTML folder. Its current configuration targets Cloudflare through Nitro. Do not enable GitHub Pages and expect this source code to run there unchanged.
-
-Use a compatible Cloudflare Workers deployment workflow for the production build. A different host may require changing the deployment target. Hosting needs its own setup; this README does not claim a particular deployment has been verified.
-
-## Limits and troubleshooting
-
-| Situation | What to do |
-|---|---|
-| `Missing script: dev` | Open the folder containing the app's `package.json`, then run the command again. |
-| Browser did not open | Open the terminal's Local address, or press `o` then Enter in Vite. |
-| Phone cannot connect | Check the same Wi-Fi, Network address, laptop server, and private-network firewall permission. |
-| Search or nearby results are empty | Check internet access, try a clearer name or another category, and retry later. Public data may be incomplete. |
-| A route cannot be found | Check stop locations. Some places are not connected by a routable driving network. |
-| A trip is missing on another device | Expected: trips are browser-local. Share the downloaded itinerary text instead. |
-| Trips disappeared after clearing browser data | Browser storage was removed. Keep exported itineraries as backups. |
-| npm reports security warnings | Review them rather than ignoring them. Do not blindly run `npm audit fix --force`; it can introduce incompatible upgrades. |
-
-International coverage is limited, nearby results are not exhaustive, and travel times do not account for live traffic or road closures. This is a trip-planning tool, not turn-by-turn navigation, booking, or an emergency service.
+- **Browser-local storage:** Saved trips remain in the browser and device where they were created. Clearing browser data may remove them, so export important itineraries as backups.
+- **Route estimates:** Durations are estimates, not live traffic predictions. Some locations may not be connected by a routable road.
+- **Public data:** International coverage and nearby-place results vary and may be incomplete.
+- **Not a navigation or booking service:** Wayfarer does not provide turn-by-turn navigation, reservations, or emergency assistance.
+- **Deployment:** This is a TanStack Start application with a server build, not just a static HTML folder. The repository's current configuration targets Cloudflare through Nitro. GitHub Pages will not run this application unchanged; use a compatible deployment workflow and verify the production build and host configuration before publishing.
 
 ## Credits
 
-Created as a road-trip planning project for a MentorMind Menternship. Map data © OpenStreetMap contributors; map rendering and place services are credited above. Keep the map's attribution visible when adapting the project.
+Created as a road-trip planning project for a MentorMind Menternship. Map data is provided by OpenStreetMap contributors, with map rendering and place services listed above. Keep required map attribution visible when adapting the project.
 
-No open-source license is included at present. A public repository allows viewing and downloading; it does not automatically grant unrestricted reuse. Add a license if you choose to permit reuse.
-#   w a y f a r e r  
- 
+No open-source license is currently included. Public visibility on GitHub does not, by itself, grant permission for unrestricted reuse; add a license if you want to permit reuse.
+'''
+
+output_path = "/mnt/data/README_revised.md"
+pypandoc.convert_text(readme, "md", format="md", outputfile=output_path, extra_args=["--standalone"])
+print(f"Created: {output_path}")
