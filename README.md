@@ -3,6 +3,9 @@
 **An India-first road trip planner**\
 *Find places. Plan stops. Take the long way round.*
 
+[🚀 **Launch Live Demo →**](https://wayfarer-green-seven.vercel.app/)
+
+## ✨ Features
 ![React
 19](https://img.shields.io/badge/React-19-149ECA?logo=react&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)
