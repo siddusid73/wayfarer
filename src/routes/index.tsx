@@ -115,7 +115,7 @@ function Index() {
           </p>
           <form
             onSubmit={create}
-            className="animate-rise mt-8 grid gap-3 rounded-2xl border border-border bg-card p-4 shadow-xl [animation-delay:160ms] sm:grid-cols-2 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)_minmax(130px,auto)_80px_auto] lg:items-end"
+            className="animate-rise mt-8 grid min-w-0 gap-3 rounded-2xl border border-border bg-card p-4 shadow-xl [animation-delay:160ms] sm:grid-cols-2 lg:grid-cols-5 lg:items-end"
           >
             <PlaceSearch
               label="Starting point"
