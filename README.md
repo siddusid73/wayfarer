@@ -5,8 +5,6 @@
 
 [🚀 **Launch Live Demo →**](https://wayfarer-green-seven.vercel.app/)
 
-<br>
-
 ## ✨ Features
 ![React
 19](https://img.shields.io/badge/React-19-149ECA?logo=react&logoColor=white)
